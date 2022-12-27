@@ -26,13 +26,13 @@ jobs:
         run: dotnet build D:\a\PressDotApi\PressDotApi\PressDot\ --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o D:\a\PressDotApi\PressDotApi\PressDot\
+        run: dotnet publish D:\a\PressDotApi\PressDotApi\PressDot\ -c Release -o D:\a\PressDotApi\Release\
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          path: D:\a\PressDotApi\Release\
 
   deploy:
     runs-on: windows-latest
