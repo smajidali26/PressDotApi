@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30128.74
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PressDot", "PressDot\PressDot.csproj", "{C970E209-9500-4585-87FD-ACB0D69A0184}"
 EndProject
@@ -56,7 +56,6 @@ Global
 		{2571E524-400F-4D93-AB01-5335004E6776}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2571E524-400F-4D93-AB01-5335004E6776}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{2571E524-400F-4D93-AB01-5335004E6776}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2571E524-400F-4D93-AB01-5335004E6776}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2571E524-400F-4D93-AB01-5335004E6776}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
