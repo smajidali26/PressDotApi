@@ -23,6 +23,10 @@ jobs:
           include-prerelease: true
       - name: Current directory
         run: dir
+        
+      - name: Go To PressDot
+        run: CD PressDot
+        
       - name: Build with dotnet
         run: dotnet build --source D:\a\PressDotApi\PressDotApi --configuration Release
 
