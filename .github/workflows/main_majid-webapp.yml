@@ -29,7 +29,7 @@ jobs:
         run: dir
         
       - name: Build with dotnet
-        run: dotnet build --source D:\a\PressDotApi\PressDotApi\PressDot --configuration Release
+        run: dotnet build --source D:\a\PressDotApi\PressDotApi\PressDot\PressDot.sln --configuration Release
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
