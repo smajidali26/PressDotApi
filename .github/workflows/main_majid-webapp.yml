@@ -20,12 +20,13 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0.x'
-          include-prerelease: true
-      - name: Current directory
-        run: dir
+          include-prerelease: true      
         
       - name: Go To PressDot
         run: CD PressDot
+        
+      - name: Current directory
+        run: dir
         
       - name: Build with dotnet
         run: dotnet build --source D:\a\PressDotApi\PressDotApi\PressDot --configuration Release
