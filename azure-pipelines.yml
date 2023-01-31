@@ -26,3 +26,20 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
+
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Visual Studio Enterprise – MPN(60e494be-a497-4190-aa8d-33482f857aa8)'
+    appType: 'webApp'
+    WebAppName: 'dev-pressdot-api'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
