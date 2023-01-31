@@ -1,10 +1,8 @@
-﻿/*
-After deployment of database, create following roles.
-
-*/
+﻿IF (NOT EXISTS(SELECT * FROM UserRole))
+BEGIN
 
 SET IDENTITY_INSERT [dbo].[UserRole] ON 
-GO
+
 INSERT INTO dbo.UserRole
 (
     UserRoleId,
@@ -30,7 +28,7 @@ VALUES
     0 -- IsDeleted - bit
 )
 
-GO
+
 INSERT INTO dbo.UserRole
 (
     UserRoleId,
@@ -56,7 +54,7 @@ VALUES
     0 -- IsDeleted - bit
 )
 
-GO
+
 INSERT INTO dbo.UserRole
 (
     UserRoleId,
@@ -82,7 +80,7 @@ VALUES
     0 -- IsDeleted - bit
 )
 
-GO
+
 INSERT INTO dbo.UserRole
 (
     UserRoleId,
@@ -108,7 +106,7 @@ VALUES
     0 -- IsDeleted - bit
 )
 
-GO
+
 INSERT INTO dbo.UserRole
 (
     UserRoleId,
@@ -133,7 +131,8 @@ VALUES
     NULL, -- DeletedBy - int
     0 -- IsDeleted - bit
 )
-GO
+
+
 INSERT INTO dbo.UserRole
 (
     UserRoleId,
@@ -158,7 +157,7 @@ VALUES
     NULL, -- DeletedBy - int
     0 -- IsDeleted - bit
 )
-GO
+
 INSERT INTO dbo.UserRole
 (
     UserRoleId,
@@ -183,13 +182,11 @@ VALUES
     NULL, -- DeletedBy - int
     0 -- IsDeleted - bit
 )
-GO
-SET IDENTITY_INSERT [dbo].[UserRole] OFF
-GO
 
-GO
+SET IDENTITY_INSERT [dbo].[UserRole] OFF
+
 SET IDENTITY_INSERT [dbo].[Users] ON
-GO
+
 INSERT INTO dbo.Users
 (
        [UserId]
@@ -219,13 +216,11 @@ VALUES
 	0
 )
 
-GO
-SET IDENTITY_INSERT [dbo].[Users] OFF
-GO
 
-GO
+SET IDENTITY_INSERT [dbo].[Users] OFF
+
 SET IDENTITY_INSERT [dbo].[SaloonType] ON
-GO
+
 INSERT INTO dbo.SaloonType
 (
        [SaloonTypeId]
@@ -240,7 +235,7 @@ VALUES
 	GETDATE(),
 	0
 )
-GO
+
 INSERT INTO dbo.SaloonType
 (
        [SaloonTypeId]
@@ -256,9 +251,9 @@ VALUES
 	0
 )
 
-GO
+
 SET IDENTITY_INSERT [dbo].[SaloonType] OFF
-GO
+
 
 insert into DaysOfWeek values('Monday',getdate(),null, null,null,null,null,0)
 insert into DaysOfWeek values('Tuesday',getdate(),null, null,null,null,null,0)
@@ -277,4 +272,6 @@ INSERT INTO [dbo].[States] ([Value],[StateFor],[CreatedDate],[CreatedBy],[Update
 		   ('Sent to Laboratory','Order',getdate(),NULL,getdate(),NULL,null,null,0),
 		   ('Sent to Saloon','Order',getdate(),NULL,getdate(),NULL,null,null,0),
 		   ('Complete','Order',getdate(),NULL,getdate(),NULL,null,null,0)
-GO
+
+
+END
