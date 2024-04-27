@@ -150,7 +150,7 @@ namespace PressDot
             app.UseRouting();
 
             app.UseOpenApi();
-            app.UseSwaggerUi3();
+            app.UseSwaggerUi();
 
             app.UseAuthorization();
             app.UseCors();
