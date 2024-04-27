@@ -34,7 +34,7 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'Visual Studio Enterprise – MPN(60e494be-a497-4190-aa8d-33482f857aa8)'
+    azureSubscription: 'Azure subscription 1(2882f8df-2754-43fb-98c1-27446b37581b)'
     appType: 'webApp'
-    WebAppName: 'dev-pressdot-api'
+    WebAppName: 'pressdotapi'
     packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
